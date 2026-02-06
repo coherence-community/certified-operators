@@ -1,4 +1,3 @@
----
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
@@ -29,10 +28,9 @@ metadata:
     capabilities: Full Lifecycle
     categories: Database
     certified: "false"
-    containerImage: iad.ocir.io/odx-stateservice/openshift/coherence-operator:3.5.10
+    containerImage: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
     createdAt: "2026-02-06T06:08:23Z"
-    description: The Oracle Coherence Kubernetes Operator enables easy management
-      of Coherence clusters in a Kubernetes environment.
+    description: The Oracle Coherence Kubernetes Operator enables easy management of Coherence clusters in a Kubernetes environment.
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
     features.operators.openshift.io/csi: "false"
@@ -56,8 +54,7 @@ spec:
   apiservicedefinitions: {}
   customresourcedefinitions:
     owned:
-    - description: Coherence is the top level schema for the Coherence API and custom
-        resource definition (CRD).
+    - description: Coherence is the top level schema for the Coherence API and custom resource definition (CRD).
       displayName: Coherence
       kind: Coherence
       name: coherence.coherence.oracle.com
@@ -299,14 +296,14 @@ spec:
                 - name: SERVICE_NAME
                   value: coherence-operator-rest
                 - name: OPERATOR_IMAGE
-                  value: iad.ocir.io/odx-stateservice/openshift/coherence-operator:3.5.10
+                  value: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
                 - name: RELATED_IMAGE_COHERENCE_OPERATOR
-                  value: iad.ocir.io/odx-stateservice/openshift/coherence-operator:3.5.10
+                  value: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
                 envFrom:
                 - configMapRef:
                     name: env-vars
                     optional: true
-                image: iad.ocir.io/odx-stateservice/openshift/coherence-operator:3.5.10
+                image: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
                 livenessProbe:
                   failureThreshold: 3
                   httpGet:
@@ -435,6 +432,12 @@ spec:
     name: Oracle Corporation
     url: https://github.com/oracle/coherence-operator
   relatedImages:
-  - image: iad.ocir.io/odx-stateservice/openshift/coherence-operator:3.5.10
-    name: coherence-operator
+  - name: coherence-operator
+    image: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
+  - name: openshift/coherence-operator-59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300-annotation
+    image: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
+  - name: manager
+    image: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
+  - name: coherence_operator
+    image: iad.ocir.io/odx-stateservice/openshift/coherence-operator@sha256:59a3b691a1d896712fe91440ee561204100ec6e11429b861ebea81c1ddf69300
   version: 3.5.10
